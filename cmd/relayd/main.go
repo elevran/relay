@@ -18,7 +18,6 @@ const (
 )
 
 func main() {
-
 	logger := log.NewStdlibLogger("relayd")
 
 	address := flag.String("listen", defaultAddress, "Address:port on which to listen.")
@@ -32,7 +31,6 @@ func main() {
 	}
 
 	relayServer := newRelay(*address, logger)
-
 	go func() {
 		logger.Println("Starting relay on", *address)
 		err := relayServer.start()
